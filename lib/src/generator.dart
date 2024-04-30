@@ -64,7 +64,8 @@ class Generator {
         .replaceAll("´", "'")
         .replaceAll("»", '"')
         .replaceAll(" ", ' ')
-        .replaceAll("•", '.');
+        .replaceAll("•", '.')
+        .replaceAll("⁠", '');
     if (!isKanji) {
       return latin1.encode(text);
     } else {
