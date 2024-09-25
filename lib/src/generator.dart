@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'dart:typed_data' show Uint8List;
+
+import 'package:esc_pos_utils_plus/esc_pos_utils_plus.dart';
 import 'package:flutter/services.dart';
 import 'package:image/image.dart';
-import 'package:esc_pos_utils_plus/esc_pos_utils_plus.dart';
+
 import 'commands.dart';
 
 class Generator {
@@ -13,9 +15,11 @@ class Generator {
   final PaperSize _paperSize;
   final CapabilityProfile _profile;
   int? _maxCharsPerLine;
+
   // Global styles
   String? _codeTable;
   PosFontType? _font;
+
   // Current styles
   PosStyles _styles = const PosStyles();
   final Codec codec;
@@ -231,6 +235,7 @@ class Generator {
     return ((0xFFFFFFFF ^ (0x1 << shift)) & uint32) |
         ((newValue ? 1 : 0) << shift);
   }
+
   // ************************ (end) Internal helpers  ************************
 
   //**************************** Public command generators ************************
@@ -479,7 +484,8 @@ class Generator {
   ///
   /// A row contains up to 12 columns. A column has a width between 1 and 12.
   /// Total width of columns in one row must be equal 12.
-  List<int> row(List<PosColumn> cols, {bool multiLine = true}) {
+  List<int> row(List<PosColumn> cols,
+      {bool multiLine = true, bool truncateText = false}) {
     List<int> bytes = [];
     final isSumValid = cols.fold(0, (int sum, col) => sum + col.width) == 12;
     if (!isSumValid) {
@@ -502,6 +508,15 @@ class Generator {
         Uint8List encodedToPrint = cols[i].textEncoded != null
             ? cols[i].textEncoded!
             : _encode(cols[i].text);
+
+        // Handle truncation if multiLine is false and truncateText is true
+        if (!multiLine && truncateText) {
+          int realCharactersNb = encodedToPrint.length;
+          if (realCharactersNb > maxCharactersNb) {
+            // Truncate the content to fit within the available space
+            encodedToPrint = encodedToPrint.sublist(0, maxCharactersNb);
+          }
+        }
 
         // If the col's content is too long, split it to the next row
         if (multiLine) {
@@ -530,8 +545,8 @@ class Generator {
           colWidth: cols[i].width,
         );
       } else {
-        // CASE 1: containsChinese = true
-        // Split text into multiple lines if it too long
+        // CASE 2: containsChinese = true
+        // Split text into multiple lines if too long
         int counter = 0;
         int splitPos = 0;
         for (int p = 0; p < cols[i].text.length; ++p) {
@@ -582,7 +597,7 @@ class Generator {
     bytes += emptyLines(1);
 
     if (isNextRow) {
-      bytes += row(nextRow);
+      bytes += row(nextRow, multiLine: multiLine, truncateText: truncateText);
     }
     return bytes;
   }
@@ -803,6 +818,7 @@ class Generator {
     bytes += emptyLines(linesAfter + 1);
     return bytes;
   }
+
   // ************************ (end) Public command generators ************************
 
   // ************************ (end) Internal command generators ************************
