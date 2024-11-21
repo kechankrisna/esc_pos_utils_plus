@@ -2114,6 +2114,231 @@
             "name": "Simple",
             "description": "A profile for use in printers with unknown or poor compatibility. This profile indicates that a small number of features are supported, so that commands are not sent a printer that is unlikely to understand them.\n",
             "vendor": "Generic"
+        },
+        "Everycom": {
+            "codePages": {
+                "0": "OEM437",
+                 "1": "CP932",
+                 "2": "OEM850",
+                 "5":"CP437"
+            },
+            "colors": {
+                "0": "black"
+            },
+            "features": {
+                "barcodeA": false,
+                "barcodeB": false,
+                "bitImageColumn": false,
+                "bitImageRaster": false,
+                "graphics": false,
+                "highDensity": false,
+                "paperFullCut": true,
+                "paperPartCut": true,
+                "pdf417Code": false,
+                "pulseBel": false,
+                "pulseStandard": false,
+                "qrCode": false,
+                "starCommands": false
+            },
+            "fonts": {
+                "0": {
+                    "columns": 42,
+                    "name": "Font A"
+                },
+                "1": {
+                    "columns": 56,
+                    "name": "Font B"
+                }
+            },
+            "media": {
+                "width": {
+                    "mm": "80",
+                    "pixels": "640"
+                }
+            },
+            "name": "Everycom",
+            "description": "A profile for use in printers with unknown or poor compatibility. This profile indicates that a small number of features are supported, so that commands are not sent a printer that is unlikely to understand them.\n",
+            "vendor": "Everycom"
+        },
+        "Everycom1": {
+            "codePages": {
+                "0": "OEM437",
+                 "1": "CP932",
+                 "2": "OEM850",
+                 "5":"CP437"
+            },
+            "colors": {
+                "0": "black"
+            },
+            "features": {
+                "barcodeA": false,
+                "barcodeB": false,
+                "bitImageColumn": false,
+                "bitImageRaster": false,
+                "graphics": false,
+                "highDensity": false,
+                "paperFullCut": true,
+                "paperPartCut": true,
+                "pdf417Code": false,
+                "pulseBel": false,
+                "pulseStandard": false,
+                "qrCode": false,
+                "starCommands": false
+            },
+            "fonts": {
+                "0": {
+                    "columns": 42,
+                    "name": "Font A"
+                },
+                "1": {
+                    "columns": 56,
+                    "name": "Font B"
+                }
+            },
+            "media": {
+                "width": {
+                    "mm": "80",
+                    "pixels": "Unknown"
+                }
+            },
+            "name": "Everycom",
+            "description": "A profile for use in printers with unknown or poor compatibility. This profile indicates that a small number of features are supported, so that commands are not sent a printer that is unlikely to understand them.\n",
+            "vendor": "Everycom"
+        },
+        "Everycom2": {
+            "codePages": {
+                "0": "OEM437",
+                 "1": "CP932",
+                 "2": "OEM850",
+                 "5":"CP437"
+            },
+            "colors": {
+                "0": "black"
+            },
+            "features": {
+                "barcodeA": false,
+                "barcodeB": false,
+                "bitImageColumn": false,
+                "bitImageRaster": false,
+                "graphics": false,
+                "highDensity": false,
+                "paperFullCut": true,
+                "paperPartCut": true,
+                "pdf417Code": false,
+                "pulseBel": false,
+                "pulseStandard": false,
+                "qrCode": false,
+                "starCommands": false
+            },
+            "fonts": {
+                "0": {
+                    "columns": 42,
+                    "name": "Font A"
+                },
+                "1": {
+                    "columns": 56,
+                    "name": "Font B"
+                }
+            },
+            "media": {
+                "width": {
+                    "mm": "80",
+                    "pixels": "203"
+                }
+            },
+            "name": "Everycom",
+            "description": "A profile for use in printers with unknown or poor compatibility. This profile indicates that a small number of features are supported, so that commands are not sent a printer that is unlikely to understand them.\n",
+            "vendor": "Everycom"
+        },
+        "Everycom3": {
+            "codePages": {
+                "0": "OEM437",
+                 "1": "CP932",
+                 "2": "OEM850",
+                 "5":"CP437"
+            },
+            "colors": {
+                "0": "black"
+            },
+            "features": {
+                "barcodeA": false,
+                "barcodeB": false,
+                "bitImageColumn": false,
+                "bitImageRaster": false,
+                "graphics": false,
+                "highDensity": false,
+                "paperFullCut": true,
+                "paperPartCut": true,
+                "pdf417Code": false,
+                "pulseBel": false,
+                "pulseStandard": false,
+                "qrCode": false,
+                "starCommands": false
+            },
+            "fonts": {
+                "0": {
+                    "columns": 42,
+                    "name": "Font A"
+                },
+                "1": {
+                    "columns": 56,
+                    "name": "Font B"
+                }
+            },
+            "media": {
+                "width": {
+                    "mm": "80",
+                    "pixels": "640"
+                }
+            },
+            "name": "Everycom",
+            "description": "A profile for use in printers with unknown or poor compatibility. This profile indicates that a small number of features are supported, so that commands are not sent a printer that is unlikely to understand them.\n",
+            "vendor": "Everycom"
+        },
+        "Everycom4": {
+            "codePages": {
+                "0": "OEM437",
+                 "1": "CP932",
+                 "2": "OEM850",
+                 "5":"CP437"
+            },
+            "colors": {
+                "0": "black"
+            },
+            "features": {
+                "barcodeA": false,
+                "barcodeB": false,
+                "bitImageColumn": false,
+                "bitImageRaster": false,
+                "graphics": false,
+                "highDensity": false,
+                "paperFullCut": true,
+                "paperPartCut": true,
+                "pdf417Code": false,
+                "pulseBel": false,
+                "pulseStandard": false,
+                "qrCode": false,
+                "starCommands": false
+            },
+            "fonts": {
+                "0": {
+                    "columns": 42,
+                    "name": "Font A"
+                },
+                "1": {
+                    "columns": 56,
+                    "name": "Font B"
+                }
+            },
+            "media": {
+                "width": {
+                    "mm": "80",
+                    "pixels": "512"
+                }
+            },
+            "name": "Everycom",
+            "description": "A profile for use in printers with unknown or poor compatibility. This profile indicates that a small number of features are supported, so that commands are not sent a printer that is unlikely to understand them.\n",
+            "vendor": "Everycom"
         }
     }
 }
